@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="830.0" prefWidth="1137.0" style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pointofsale.DashboardController">
+   <children>
+      <ImageView fitHeight="59.0" fitWidth="108.0" layoutX="58.0" layoutY="167.0" onMouseClicked="#posaction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icon/Capture.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="59.0" fitWidth="108.0" layoutX="147.0" layoutY="167.0" onMouseClicked="#productsaction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icon/Capture2.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="59.0" fitWidth="108.0" layoutX="233.0" layoutY="167.0" onMouseClicked="#salesaction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icon/Capture3.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="59.0" fitWidth="108.0" layoutX="325.0" layoutY="167.0" onMouseClicked="#cataction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icon/Capture4.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="59.0" fitWidth="108.0" layoutX="412.0" layoutY="167.0" onMouseClicked="#customersaction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icon/Capture5.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="59.0" fitWidth="108.0" layoutX="503.0" layoutY="167.0" onMouseClicked="#settingsaction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icon/Capture6.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="59.0" fitWidth="108.0" layoutX="589.0" layoutY="167.0" onMouseClicked="#reportsaction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icon/Capture7.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="59.0" fitWidth="108.0" layoutX="679.0" layoutY="167.0" onMouseClicked="#usersaction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icon/Capture8.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="59.0" fitWidth="108.0" layoutX="765.0" layoutY="167.0" onMouseClicked="#backupaction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icon/Capture9.PNG" />
+         </image>
+      </ImageView>
+      <Text fill="#757575" layoutX="58.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
+         <font>
+            <Font name="Tahoma" size="24.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="6.0" fitWidth="907.0" layoutX="58.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icon/Capture10.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="6.0" fitWidth="907.0" layoutX="58.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icon/Capture10.PNG" />
+         </image>
+      </ImageView>
+      <Pane prefHeight="50.0" prefWidth="1137.0" style="-fx-background-color: #00a65a;">
+         <children>
+            <ImageView fitHeight="29.0" fitWidth="33.0" layoutX="1002.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icon/male.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="1038.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Admin" />
+            <Text fill="WHITE" layoutX="42.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Simple POS" wrappingWidth="124.13671875">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="806.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tue 12 Jan 2021 04:14 PM" wrappingWidth="172.13671875">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

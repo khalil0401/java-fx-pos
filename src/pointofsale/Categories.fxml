@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="786.0" prefWidth="1080.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="pointofsale.CategoriesController">
+   <children>
+      <TableView layoutX="15.0" layoutY="139.0" prefHeight="641.0" prefWidth="1050.0">
+         <columns>
+            <TableColumn prefWidth="234.0" text="Code" />
+            <TableColumn prefWidth="417.0" text="Name" />
+            <TableColumn prefWidth="398.0" text="Actions" />
+         </columns>
+      </TableView>
+      <ChoiceBox layoutX="95.0" layoutY="83.0" prefHeight="40.0" prefWidth="80.0" />
+      <Text layoutX="40.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Show " wrappingWidth="47.0" />
+      <Button layoutX="984.0" layoutY="82.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="80.0" text="Excel" />
+      <TextField layoutX="191.0" layoutY="83.0" prefHeight="40.0" prefWidth="399.0" promptText="Name &amp; Type &amp; ..." />
+      <Button layoutX="603.0" layoutY="82.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="80.0" style="-fx-background-color: #3c8dbc;" text="Search" textFill="WHITE" />
+      <Button layoutX="858.0" layoutY="82.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #00a65a;" text="Add Categories" textFill="WHITE" />
+   </children>
+</AnchorPane>

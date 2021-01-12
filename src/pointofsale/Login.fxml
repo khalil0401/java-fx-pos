@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="410.0" prefWidth="600.0" style="-fx-background-color: #00a65a;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pointofsale.LoginController">
+   <children>
+      <Pane layoutX="103.0" layoutY="111.0" prefHeight="243.0" prefWidth="394.0" style="-fx-background-color: #fff;">
+         <children>
+            <Button id="login_buttion" layoutX="262.0" layoutY="196.0" mnemonicParsing="false" onAction="#loginaction" prefHeight="35.0" prefWidth="110.0" style="-fx-background-color: #3c8dbc;" text="Login" textFill="WHITE" />
+            <TextField fx:id="text_username" layoutX="53.0" layoutY="55.0" prefHeight="35.0" prefWidth="319.0" promptText="Username" />
+            <PasswordField fx:id="text_password" layoutX="53.0" layoutY="111.0" prefHeight="35.0" prefWidth="319.0" promptText="Password" />
+            <Text fill="#666666" layoutX="113.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign in to start your session" wrappingWidth="199.9830722808838" />
+            <CheckBox layoutX="51.0" layoutY="201.0" mnemonicParsing="false" text="Remember Me" textFill="#666666" />
+         </children>
+      </Pane>
+      <Text fill="WHITE" layoutX="186.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Simple POS" wrappingWidth="229.0">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+     
+   </children>
+</AnchorPane>
