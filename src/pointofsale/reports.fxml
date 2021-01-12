@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="786.0" prefWidth="1080.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="pointofsale.ReportsController">
+   <children>
+      <Pane layoutX="103.0" layoutY="30.0" prefHeight="78.0" prefWidth="200.0" style="-fx-background-color: #00c0ef;">
+         <children>
+            <ImageView fitHeight="78.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icon/Capture11.PNG" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="326.0" layoutY="30.0" prefHeight="78.0" prefWidth="200.0" style="-fx-background-color: #f39c12;">
+         <children>
+            <ImageView fitHeight="78.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icon/Capture12.PNG" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="550.0" layoutY="30.0" prefHeight="78.0" prefWidth="200.0" style="-fx-background-color: #dd4b39;">
+         <children>
+            <ImageView fitHeight="78.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icon/Capture13.PNG" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="777.0" layoutY="30.0" prefHeight="78.0" prefWidth="200.0" style="-fx-background-color: #00a65a;">
+         <children>
+            <ImageView fitHeight="78.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icon/Capture14.PNG" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
