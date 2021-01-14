@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListCell?>
+<?import javafx.scene.layout.VBox?>
+
+<fx:root prefHeight="65.0" prefWidth="64.0" type="javafx.scene.control.ListCell" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <graphic>
+        <VBox>
+            <children>
+                <Label fx:id="titleLabel" text="Banana" />
+                <VBox>
+                    <children>
+                        <Label fx:id="commentLabel" text="Banana" />
+                        <Label fx:id="descriptionLabel" text="Banana" />
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </graphic>
+</fx:root>
