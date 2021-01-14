@@ -26,7 +26,10 @@ import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.transform.Scale;
@@ -40,7 +43,6 @@ import javafx.util.Callback;
  */
 public class POSController implements Initializable {
 
-   
     @FXML
     private TableView<oneproduct> tableprod;
     private JdbcDao dao;
@@ -60,49 +62,76 @@ public class POSController implements Initializable {
     private TableColumn<oneproduct, String> PriceProPayment;
     @FXML
     private TableColumn<oneproduct, String> QuantityProPayment;
+    @FXML
+    private TextField barcodefiled;
+    @FXML
+    private TextField totalpayment;
+
     public POSController() {
 
-     
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-           dao=new JdbcDao();
-           ObservableList<oneproduct> list=FXCollections.observableArrayList();
-             ObservableList<oneproduct> lisProPaymentt=FXCollections.observableArrayList();
-            name.setCellValueFactory(
+        dao = new JdbcDao();
+        ObservableList<oneproduct> list = FXCollections.observableArrayList();
+        ObservableList<oneproduct> lisProPaymentt = FXCollections.observableArrayList();
+        name.setCellValueFactory(
                 new PropertyValueFactory<oneproduct, String>("name"));
-             price.setCellValueFactory(
+        price.setCellValueFactory(
                 new PropertyValueFactory<oneproduct, String>("Price"));
-              Qantuty.setCellValueFactory(
+        Qantuty.setCellValueFactory(
                 new PropertyValueFactory<oneproduct, String>("Quantity"));
-               NameProPayment.setCellValueFactory(
+        NameProPayment.setCellValueFactory(
                 new PropertyValueFactory<oneproduct, String>("name"));
-             PriceProPayment.setCellValueFactory(
+        PriceProPayment.setCellValueFactory(
                 new PropertyValueFactory<oneproduct, String>("Price"));
-              QuantityProPayment.setCellValueFactory(
+        QuantityProPayment.setCellValueFactory(
                 new PropertyValueFactory<oneproduct, String>("Quantity"));
         try {
-            ResultSet resultSet= dao.getproduct();
-           while(resultSet.next()){
-               System.err.println(resultSet.getString("name"));
-               oneproduct p=new oneproduct(resultSet.getString("name"), resultSet.getString("price"), resultSet.getString("quantity"));
-              // list.add(p);
-               tableprod.getItems().add(p);
-               
-           }
-           QuantityProPayment.setEditable(true);
-           tableprod.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-              // lisProPaymentt.add(newValue);
-               System.err.println(newValue.getName());
-               listpayment.getItems().add(observable.getValue());
-           } );
+            ResultSet resultSet = dao.getproduct();
+            while (resultSet.next()) {
+                System.err.println(resultSet.getString("name"));
+                oneproduct p = new oneproduct(resultSet.getString("name"), resultSet.getString("price"), resultSet.getString("quantity"));
+                // list.add(p);
+                tableprod.getItems().add(p);
+
+            }
+            QuantityProPayment.setEditable(true);
+            tableprod.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+                // lisProPaymentt.add(newValue);
+                System.err.println(newValue.getName());
+                listpayment.getItems().add(observable.getValue());
+                float total=0;
+                for (int i=0;i<listpayment.getItems().size();i++){
+                    total=total+ Float.valueOf(listpayment.getItems().get(i).getPrice());
+                    totalpayment.setText(total+"");
+                }
+            });
         } catch (SQLException ex) {
             Logger.getLogger(POSController.class.getName()).log(Level.SEVERE, null, ex);
         }
         //gridview=new GridPane();
-      
-       
+
+    }
+
+    @FXML
+    private void BarCodeTyped(KeyEvent event) throws SQLException {
+        if (event.getCode() == KeyCode.ENTER) {
+            ResultSet resultSet = dao.SearchProdByCodeAndName(barcodefiled.getText().toString());
+            System.err.println(barcodefiled.getText().toString());
+            while (resultSet.next()) {
+                System.err.println(resultSet.getString("name"));
+                oneproduct p = new oneproduct(resultSet.getString("name"), resultSet.getString("price"), resultSet.getString("quantity"));
+                // list.add(p);
+                for (int i = 0; i < tableprod.getItems().size(); i++) {
+                    tableprod.getItems().clear();
+                }
+                tableprod.refresh();
+                tableprod.getItems().add(p);
+
+            }
+        }
     }
 
 }

@@ -53,4 +53,11 @@ return connection;
         
         return resultSet;
     }
+     public ResultSet SearchProdByCodeAndName(String Name) throws SQLException{
+        Connection c =conctionfun();
+       PreparedStatement p= c.prepareStatement("SELECT * FROM tec_products WHERE name LIKE '%"+Name+"%' OR code LIKE '%"+Name+"%'");
+        ResultSet resultSet=p.executeQuery();
+        
+        return resultSet;
+    }
 }
