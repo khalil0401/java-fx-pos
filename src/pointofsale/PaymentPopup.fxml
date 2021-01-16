@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="505.0" prefWidth="603.0" style="-fx-background-color: #008d4c;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pointofsale.PaymentPopupController">
+   <children>
+      <Pane layoutY="69.0" prefHeight="379.0" prefWidth="603.0" style="-fx-background-color: #00a65a;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <GridPane alignment="CENTER" layoutX="24.0" layoutY="23.0" prefHeight="107.0" prefWidth="370.0" style="-fx-background-color: #fff;">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="الرصيد" wrappingWidth="92.13671875">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="countpay" strokeType="OUTSIDE" strokeWidth="0.0" text="0.00" wrappingWidth="92.13671875">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="اجمالي المدفوع" wrappingWidth="92.13671875">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="Totalpaid" strokeType="OUTSIDE" strokeWidth="0.0" text="0.00" wrappingWidth="92.13671875">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="اجمالي العناصر" wrappingWidth="92.13671875">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="TotalElement" strokeType="OUTSIDE" strokeWidth="0.0" text="0.00" wrappingWidth="92.13671875">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="إجمالي المبلغ المستحق الدفع" wrappingWidth="92.13671875">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="Totalpay" strokeType="OUTSIDE" strokeWidth="0.0" text="0.00" wrappingWidth="92.13671875">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+               </children>
+            </GridPane>
+            <TextArea layoutX="24.0" layoutY="157.0" prefHeight="64.0" prefWidth="370.0" />
+            <TextField fx:id="Total" layoutX="24.0" layoutY="249.0" prefHeight="36.0" prefWidth="227.0" />
+            <ComboBox fx:id="MethodPay" layoutX="257.0" layoutY="249.0" prefHeight="36.0" prefWidth="131.0" />
+            <TextField fx:id="comment" layoutX="24.0" layoutY="313.0" prefHeight="36.0" prefWidth="370.0" />
+            <Text fill="WHITE" layoutX="28.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ملاحظة" wrappingWidth="76.13671875">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="24.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="المبلغ" wrappingWidth="76.13671875">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="257.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" text="طريقة الدفع" wrappingWidth="76.13671875">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="24.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ملاحظات الدفع" wrappingWidth="118.13671875">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Button fx:id="TotalButtion" layoutX="426.0" layoutY="23.0" mnemonicParsing="false" onAction="#AddCountOnAction" prefHeight="36.0" prefWidth="161.0" style="-fx-background-color: #00c0ef; -fx-border-color: #00acd6;" text="Button" textFill="WHITE" />
+            <Button layoutX="426.0" layoutY="59.0" mnemonicParsing="false" onAction="#AddCountOnAction" prefHeight="36.0" prefWidth="161.0" style="-fx-background-color: #f39c12; -fx-border-color: #e08e0b;" text="10" textFill="WHITE" />
+            <Button layoutX="426.0" layoutY="95.0" mnemonicParsing="false" onAction="#AddCountOnAction" prefHeight="36.0" prefWidth="161.0" style="-fx-background-color: #f39c12; -fx-border-color: #e08e0b;" text="20" textFill="WHITE" />
+            <Button layoutX="426.0" layoutY="131.0" mnemonicParsing="false" onAction="#AddCountOnAction" prefHeight="36.0" prefWidth="161.0" style="-fx-background-color: #f39c12; -fx-border-color: #e08e0b;" text="50" textFill="WHITE" />
+            <Button layoutX="426.0" layoutY="167.0" mnemonicParsing="false" onAction="#AddCountOnAction" prefHeight="36.0" prefWidth="161.0" style="-fx-background-color: #f39c12; -fx-border-color: #e08e0b;" text="100" textFill="WHITE" />
+            <Button layoutX="426.0" layoutY="203.0" mnemonicParsing="false" onAction="#AddCountOnAction" prefHeight="36.0" prefWidth="161.0" style="-fx-background-color: #f39c12; -fx-border-color: #e08e0b;" text="500" textFill="WHITE" />
+            <Button layoutX="426.0" layoutY="239.0" mnemonicParsing="false" onAction="#clearOnAction" prefHeight="36.0" prefWidth="161.0" style="-fx-background-color: #dd4b39; -fx-border-color: #ac2925;" text="مسح" textFill="WHITE" />
+         </children>
+      </Pane>
+      <Text fill="WHITE" layoutX="24.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="دفع" wrappingWidth="76.13671875">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Button layoutX="24.0" layoutY="460.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="63.0" style="-fx-background-color: #f4f4f4; -fx-border-color: #ddd;" text="إغلاق" textFill="#444444" />
+      <Button layoutX="526.0" layoutY="460.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="63.0" style="-fx-background-color: #3c8dbc; -fx-border-color: #367fa9;" text="دفع" textFill="#f8f8f8" />
+   </children>
+</AnchorPane>

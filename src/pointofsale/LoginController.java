@@ -36,6 +36,7 @@ public class LoginController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        
     }    
 
     @FXML
@@ -50,6 +51,8 @@ public class LoginController implements Initializable {
                 Stage stage = new Stage(); 
                 stage.setScene(new Scene(root));
                 stage.show();
+               Stage stage1=(Stage) text_username.getScene().getWindow();
+               stage1.close();
             }catch(Exception e){
                 
             }

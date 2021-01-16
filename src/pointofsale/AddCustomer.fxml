@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="786.0" prefWidth="1024.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="pointofsale.AddCustomerController">
+   <children>
+      <Pane layoutX="10.0" layoutY="10.0" prefHeight="50.0" style="-fx-background-color: #00a65a;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text fill="WHITE" layoutX="34.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Simple POS" wrappingWidth="983.13671875">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <TextField fx:id="Name" layoutX="300.0" layoutY="146.0" prefHeight="43.0" prefWidth="445.0" />
+      <Text layoutX="300.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+      <TextField fx:id="Email" layoutX="300.0" layoutY="220.0" prefHeight="43.0" prefWidth="445.0" />
+      <Text layoutX="300.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+      <TextField fx:id="Phone" layoutX="300.0" layoutY="291.0" prefHeight="43.0" prefWidth="445.0" />
+      <Text layoutX="300.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone" />
+      <Button layoutX="298.0" layoutY="360.0" mnemonicParsing="false" onAction="#AddCustomerAction" prefHeight="43.0" prefWidth="92.0" style="-fx-background-color: #3c8dbc;" text="Add " textFill="WHITE" />
+   </children>
+</AnchorPane>
