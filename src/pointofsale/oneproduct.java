@@ -14,6 +14,9 @@ import javafx.beans.property.SimpleStringProperty;
  * @author benchek
  */
 public class oneproduct{
+
+   
+   private SimpleStringProperty ID;
     private SimpleStringProperty Name;
     private SimpleStringProperty Price;
     private SimpleStringProperty Quantity;
@@ -23,7 +26,8 @@ public class oneproduct{
      private SimpleStringProperty Cost;
     private SimpleStringProperty Actions;
 
-    public oneproduct(String Name, String Price, String Quantity, String Code, String Category, String Type, String Cost, String Actions) {
+    public oneproduct(String ID ,String Name, String Price, String Quantity, String Code, String Category, String Type, String Cost, String Actions) {
+        this.ID=new SimpleStringProperty(ID); 
         this.Name=new SimpleStringProperty(Name); 
         this.Price=new SimpleStringProperty(Price);
         this.Quantity=new SimpleStringProperty(Quantity);
@@ -33,7 +37,13 @@ public class oneproduct{
         this.Cost=new SimpleStringProperty(Cost);
         this.Actions=new SimpleStringProperty(Actions);
     }
-    
+     public void setID(SimpleStringProperty ID) {
+        this.ID = ID;
+    }
+
+    public String getID() {
+        return ID.get();
+    }
 
     public String getName() {
         return Name.get();

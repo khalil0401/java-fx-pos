@@ -5,24 +5,45 @@
  */
 package pointofsale;
 
+import javafx.collections.ObservableList;
+
 /**
  *
  * @author benchek
  */
 public class PaidObject {
-   private String totalobject;
+   private ObservableList<oneproduct> totalobject;
    private String total;
-
-    public PaidObject(String totalobject, String total) {
+   private int IdCustomer;
+ private String CustomerName;
+    public PaidObject(int IdCustomer,String CustomerName,ObservableList<oneproduct> totalobject, String total) {
         this.totalobject = totalobject;
         this.total = total;
+        this.IdCustomer=IdCustomer;
+         this.CustomerName=CustomerName;
+    }
+
+    public void setCustomerName(String CustomerName) {
+        this.CustomerName = CustomerName;
+    }
+
+    public String getCustomerName() {
+        return CustomerName;
+    }
+
+    public int getIdCustomer() {
+        return IdCustomer;
+    }
+
+    public void setIdCustomer(int IdCustomer) {
+        this.IdCustomer = IdCustomer;
     }
    
-    public String getTotalobject() {
+    public ObservableList<oneproduct> getTotalobject() {
         return totalobject;
     }
 
-    public void setTotalobject(String totalobject) {
+    public void setTotalobject(ObservableList<oneproduct> totalobject) {
         this.totalobject = totalobject;
     }
 

@@ -2,7 +2,6 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -13,52 +12,16 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pointofsale.POSController">
+<AnchorPane id="AnchorPane" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pointofsale.POSController">
    <children>
-      <Pane layoutX="31.0" layoutY="44.0" prefHeight="697.0" prefWidth="430.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="31.0" AnchorPane.topAnchor="44.0">
+      <Pane layoutX="30.0" layoutY="681.0" prefHeight="81.0" prefWidth="430.0" style="-fx-background-color: #ecf0f5;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="30.0">
          <children>
-            <TextField fx:id="barcodefiled" layoutX="37.0" layoutY="83.0" onKeyPressed="#BarCodeTyped" prefHeight="40.0" prefWidth="368.0" promptText="البحث عن المنتج عن طريق رمز أو اسم، يمكنك مسح الباركود أيضا" />
-            <TextField layoutX="37.0" layoutY="134.0" prefHeight="40.0" prefWidth="368.0" promptText="ملاحظات مرجعية" />
-            <TableView fx:id="listpayment" layoutX="37.0" layoutY="197.0" prefHeight="310.0" prefWidth="368.0">
-              <columns>
-                <TableColumn fx:id="NameProPayment" prefWidth="75.0" text="Name" />
-                <TableColumn fx:id="PriceProPayment" prefWidth="75.0" text="Price" />
-                  <TableColumn fx:id="QuantityProPayment" editable="true" onEditCommit="#OnEditCommitQty" prefWidth="75.0" text="Quantity" />
-              </columns>
-            </TableView>
-            <Button layoutX="262.0" layoutY="633.0" mnemonicParsing="false" onAction="#PaymentAction" prefHeight="69.0" prefWidth="143.0" style="-fx-background-color: #00a65a;" text="Payment" textFill="WHITE" />
-            <Button layoutX="131.0" layoutY="633.0" mnemonicParsing="false" onAction="#PrintAction" prefHeight="69.0" prefWidth="125.0" style="-fx-background-color: #605ca8;" text="Print" textFill="WHITE" />
-            <Button layoutX="37.0" layoutY="633.0" mnemonicParsing="false" onAction="#HoldAction" prefHeight="32.0" prefWidth="88.0" style="-fx-background-color: #f39c12;" text="Hold" textFill="WHITE" />
-            <Button layoutX="37.0" layoutY="670.0" mnemonicParsing="false" onAction="#CancelAction" prefHeight="32.0" prefWidth="88.0" style="-fx-background-color: #dd4b39;" text="Cancel" textFill="WHITE" />
-            <Text layoutX="37.0" layoutY="531.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Items" />
-            <Text layoutX="39.0" layoutY="556.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total" />
-            <TextField fx:id="totalpayment" layoutX="39.0" layoutY="560.0" prefHeight="63.0" prefWidth="368.0" text="00.00">
-               <font>
-                  <Font size="28.0" />
-               </font>
-            </TextField>
-            <ComboBox fx:id="customerLIst" layoutX="37.0" layoutY="32.0" prefHeight="40.0" prefWidth="321.0" />
-            <Button layoutX="358.0" layoutY="32.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="45.0" style="-fx-background-color: #3c8dbc; -fx-border-radius: 50px;" text="+" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Button>
+            <Button layoutX="271.0" layoutY="6.0" mnemonicParsing="false" onAction="#PaymentAction" prefHeight="69.0" prefWidth="132.0" style="-fx-background-color: #00a65a;" text="Payment" textFill="WHITE" />
+            <Button layoutX="139.0" layoutY="5.0" mnemonicParsing="false" onAction="#PrintAction" prefHeight="69.0" prefWidth="125.0" style="-fx-background-color: #605ca8;" text="Print" textFill="WHITE" />
+            <Button layoutX="44.0" layoutY="6.0" mnemonicParsing="false" onAction="#HoldAction" prefHeight="32.0" prefWidth="88.0" style="-fx-background-color: #f39c12;" text="Hold" textFill="WHITE" />
+            <Button layoutX="44.0" layoutY="41.0" mnemonicParsing="false" onAction="#CancelAction" prefHeight="32.0" prefWidth="88.0" style="-fx-background-color: #dd4b39;" text="Cancel" textFill="WHITE" />
          </children>
       </Pane>
-      <ScrollPane layoutX="470.0" layoutY="59.0" prefHeight="697.0" prefWidth="619.0" AnchorPane.leftAnchor="470.0" AnchorPane.rightAnchor="22.0">
-        <content>
-          <AnchorPane fx:id="poslist" minHeight="0.0" minWidth="0.0" prefHeight="694.0">
-               <children>
-                  <TableView fx:id="tableprod" layoutX="7.0" prefHeight="686.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-                    <columns>
-                      <TableColumn fx:id="name" prefWidth="100.0" text="Name" />
-                      <TableColumn fx:id="price" prefWidth="100.0" text="price" />
-                        <TableColumn fx:id="Qantuty" prefWidth="390.0" text="Quantity" />
-                    </columns>
-                  </TableView>
-               </children></AnchorPane>
-        </content>
-      </ScrollPane>
       <Pane prefHeight="50.0" style="-fx-background-color: #00a65a;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <ImageView fitHeight="29.0" fitWidth="33.0" layoutX="989.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
@@ -79,5 +42,50 @@
             </Text>
          </children>
       </Pane>
+      <Pane layoutX="31.0" layoutY="60.0" prefHeight="621.0" prefWidth="430.0" style="-fx-background-color: #ecf0f5;" AnchorPane.bottomAnchor="91.0" AnchorPane.leftAnchor="31.0" AnchorPane.topAnchor="60.0">
+         <children>
+            <TextField fx:id="barcodefiled" layoutX="37.0" layoutY="83.0" onKeyPressed="#BarCodeTyped" prefHeight="40.0" prefWidth="368.0" promptText="البحث عن المنتج عن طريق رمز أو اسم، يمكنك مسح الباركود أيضا" />
+            <TextField layoutX="37.0" layoutY="134.0" prefHeight="40.0" prefWidth="368.0" promptText="ملاحظات مرجعية" />
+            <TableView fx:id="listpayment" layoutX="37.0" layoutY="180.0" prefHeight="310.0" prefWidth="368.0" style="-fx-background-color: #d9edf7;">
+              <columns>
+                <TableColumn fx:id="NameProPayment" prefWidth="75.0" text="Name" />
+                <TableColumn fx:id="PriceProPayment" prefWidth="75.0" text="Price" />
+                  <TableColumn fx:id="QuantityProPayment" editable="true" prefWidth="75.0" text="Quantity" />
+              </columns>
+            </TableView>
+            <ComboBox fx:id="customerLIst" layoutX="37.0" layoutY="32.0" prefHeight="40.0" prefWidth="321.0" style="-fx-background-color: #fff; -fx-border-color: #ccc;" />
+            <Button layoutX="358.0" layoutY="32.0" mnemonicParsing="false" onAction="#AddCustomerAction" prefHeight="32.0" prefWidth="45.0" style="-fx-background-color: #3c8dbc; -fx-border-radius: 50px;" text="+" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Pane layoutX="37.0" layoutY="492.0" prefHeight="118.0" prefWidth="368.0" style="-fx-background-color: #d9edf7;">
+               <children>
+                  <Text layoutX="11.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Items">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="11.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="totalpayment" layoutY="58.0" prefHeight="63.0" prefWidth="368.0" style="-fx-background-color: #dff0d8;" text="00.00">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <TableView fx:id="tableprod" layoutX="461.0" layoutY="60.0" prefHeight="697.0" prefWidth="734.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="461.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="60.0">
+        <columns>
+          <TableColumn fx:id="name" prefWidth="100.0" text="Name" />
+          <TableColumn fx:id="price" prefWidth="100.0" text="price" />
+            <TableColumn fx:id="Qantuty" prefWidth="391.0" text="Quantity" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>

@@ -34,6 +34,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
@@ -103,6 +104,7 @@ public class POSController implements Initializable {
             while (resultSet.next()) {
                 System.err.println(resultSet.getString("name"));
                 oneproduct p = new oneproduct(
+                        resultSet.getString("id"),
                         resultSet.getString("name"),
                         resultSet.getString("price"),
                         resultSet.getString("quantity"),
@@ -149,7 +151,8 @@ public class POSController implements Initializable {
             System.err.println(barcodefiled.getText().toString());
             while (resultSet.next()) {
                 System.err.println(resultSet.getString("name"));
-                oneproduct p = new oneproduct(resultSet.getString("name"),
+                oneproduct p = new oneproduct(resultSet.getString("id"),
+                        resultSet.getString("name"),
                         resultSet.getString("price"),
                         resultSet.getString("quantity"),
                         resultSet.getString("code"),
@@ -168,26 +171,21 @@ public class POSController implements Initializable {
         }
     }
     @FXML
-    private void OnEditCommitQty(TableColumn.CellEditEvent<oneproduct, String> event) {
-        ((oneproduct) event.getTableView().getItems().get(
-                event.getTablePosition().getRow())).setQuantity(event.getNewValue());
-
-    }
-
-    @FXML
     private void PaymentAction(ActionEvent event) {
        try{    
         FXMLLoader fXLoader=new FXMLLoader(getClass().getResource("PaymentPopup.fxml"));
                 Parent root= fXLoader.load();
                 Stage stage = new Stage(); 
                 stage.setScene(new Scene(root));
-                PaidObject paidob=new PaidObject(listpayment.getItems().size()+"", totalpayment.getText());
+                PaidObject paidob=new PaidObject( HashMapCustomer.get(customerLIst.getSelectionModel().getSelectedItem()),customerLIst.getSelectionModel().getSelectedItem(),listpayment.getItems(), totalpayment.getText());
                 //stage.setUserData(paidob);
+               
+                stage.getIcons().add(new Image("file:src/pointofsale/icon/male.png"));
                 PaymentPopupController controller=fXLoader.getController();
                 controller.PassingData(paidob);
                 stage.show();
         }catch(Exception e){
-            
+            System.err.println(e);
         }
     }
 
@@ -201,6 +199,20 @@ public class POSController implements Initializable {
 
     @FXML
     private void CancelAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void AddCustomerAction(ActionEvent event) {
+           try{    
+        FXMLLoader fXLoader=new FXMLLoader(getClass().getResource("AddCustomer.fxml"));
+                Parent root= fXLoader.load();
+                Stage stage = new Stage(); 
+                stage.setScene(new Scene(root));
+                stage.show();
+    
+        }catch(Exception e){
+            
+        }
     }
 
 }

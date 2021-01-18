@@ -10,7 +10,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
+import javafx.collections.ObservableList;
 import javafx.scene.Cursor;
 
 /**
@@ -104,8 +106,18 @@ public class JdbcDao {
         boolean res = p.execute();
         return res;
     }
-    public void InsertNewPayment(int CustomerId,String CustomerName,float Total,int TotalItem,int TotalQuantity,float Paid,int CreatedBy,String Note,String Status,ArrayList<oneproduct> SaleItems){
-        
+    public void InsertNewPayment(int CustomerId,String CustomerName,float Total,int TotalItem,int TotalQuantity,float Paid,int CreatedBy,String Note,String Comment,String Status,ObservableList<oneproduct> SaleItems) throws SQLException{
+        Connection c = conctionfun();
+        PreparedStatement p = c.prepareStatement("INSERT INTO tec_sales (customer_id, customer_name,grand_total,total,total_items,paid,total_quantity,created_by,note,status)"
+                + "VALUES('" + CustomerId + "','" + CustomerName + "','" + Total + "','" + Total + "','" + TotalItem + "','" + Paid + "','" + TotalItem + "','" + 1 + "','" + Note + "','" + Status + "')",Statement.RETURN_GENERATED_KEYS);
+        int id= p.executeUpdate();
+         ResultSet res = p.getGeneratedKeys();
+        res.next();
+        for(int i=0;i<SaleItems.size();i++){
+        PreparedStatement p1 = c.prepareStatement("INSERT INTO tec_sale_items (sale_id, product_id,quantity,unit_price,cost,product_code,product_name,comment)"
+                + "VALUES('" + res.getInt(1) + "','" + SaleItems.get(i).getID() + "','" + SaleItems.get(i).getQuantity()+ "','" + SaleItems.get(i).getPrice() + "','" + SaleItems.get(i).getCost() + "','" + SaleItems.get(i).getCode() + "','" + SaleItems.get(i).getName() + "','" +Comment + "')");
+        p1.execute();
+        }
         
     }
 }

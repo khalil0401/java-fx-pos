@@ -72,7 +72,8 @@ public class ProductsController implements Initializable {
             ResultSet resultSet = dao.getproduct();
             while (resultSet.next()) {
                 System.err.println(resultSet.getString("name"));
-                oneproduct p = new oneproduct( resultSet.getString("name"), 
+                oneproduct p = new oneproduct(resultSet.getString("id"),
+                        resultSet.getString("name"), 
                         resultSet.getString("price"),
                         resultSet.getString("quantity"),
                         resultSet.getString("code"),

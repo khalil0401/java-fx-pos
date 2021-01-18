@@ -2,6 +2,8 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -19,13 +21,45 @@
             </Text>
          </children>
       </Pane>
-      <TextField fx:id="Code" layoutX="290.0" layoutY="136.0" prefHeight="43.0" prefWidth="445.0" />
-      <Text layoutX="290.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Code" />
-      <TextField fx:id="Name" layoutX="290.0" layoutY="210.0" prefHeight="43.0" prefWidth="445.0" />
-      <Text layoutX="290.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
-      <TextField fx:id="Image" editable="false" layoutX="290.0" layoutY="281.0" prefHeight="43.0" prefWidth="353.0" />
-      <Text layoutX="290.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Image" />
-      <Button layoutX="643.0" layoutY="281.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="92.0" text=" Choose file" />
-      <Button layoutX="288.0" layoutY="350.0" mnemonicParsing="false" onAction="#AddCatAction" prefHeight="43.0" prefWidth="92.0" style="-fx-background-color: #3c8dbc;" text="Add " textFill="WHITE" />
+      <TextField fx:id="Code" layoutX="55.0" layoutY="196.0" prefHeight="43.0" prefWidth="569.0" />
+      <Text layoutX="55.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="كود">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="Name" layoutX="55.0" layoutY="270.0" prefHeight="43.0" prefWidth="569.0" />
+      <Text layoutX="55.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="الاسم">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="Image" editable="false" layoutX="55.0" layoutY="341.0" prefHeight="43.0" prefWidth="475.0" />
+      <Text layoutX="55.0" layoutY="337.0" strokeType="OUTSIDE" strokeWidth="0.0" text="صورة">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Button layoutX="530.0" layoutY="341.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="92.0" text=" Choose file" />
+      <Button layoutX="53.0" layoutY="410.0" mnemonicParsing="false" onAction="#AddCatAction" prefHeight="43.0" prefWidth="92.0" style="-fx-background-color: #3c8dbc;" text="اضافة فئة" textFill="WHITE" />
+      <ImageView fitHeight="5.0" fitWidth="1021.0" layoutX="53.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icon/Capture10.PNG" />
+         </image>
+      </ImageView>
+      <Text layoutX="53.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="اضافة فئة">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="53.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="يرجى ملء المعلومات أدناه">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="5.0" fitWidth="1021.0" layoutX="53.0" layoutY="489.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icon/Capture10.PNG" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

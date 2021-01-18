@@ -86,10 +86,10 @@
                   </HBox>
                </children>
             </GridPane>
-            <TextArea layoutX="24.0" layoutY="157.0" prefHeight="64.0" prefWidth="370.0" />
+            <TextArea fx:id="Comment" layoutX="24.0" layoutY="157.0" prefHeight="64.0" prefWidth="370.0" />
             <TextField fx:id="Total" layoutX="24.0" layoutY="249.0" prefHeight="36.0" prefWidth="227.0" />
             <ComboBox fx:id="MethodPay" layoutX="257.0" layoutY="249.0" prefHeight="36.0" prefWidth="131.0" />
-            <TextField fx:id="comment" layoutX="24.0" layoutY="313.0" prefHeight="36.0" prefWidth="370.0" />
+            <TextField fx:id="Notes" layoutX="24.0" layoutY="313.0" prefHeight="36.0" prefWidth="370.0" />
             <Text fill="WHITE" layoutX="28.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ملاحظة" wrappingWidth="76.13671875">
                <font>
                   <Font size="14.0" />
@@ -125,6 +125,6 @@
          </font>
       </Text>
       <Button layoutX="24.0" layoutY="460.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="63.0" style="-fx-background-color: #f4f4f4; -fx-border-color: #ddd;" text="إغلاق" textFill="#444444" />
-      <Button layoutX="526.0" layoutY="460.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="63.0" style="-fx-background-color: #3c8dbc; -fx-border-color: #367fa9;" text="دفع" textFill="#f8f8f8" />
+      <Button layoutX="526.0" layoutY="460.0" mnemonicParsing="false" onAction="#OnActionPay" prefHeight="36.0" prefWidth="63.0" style="-fx-background-color: #3c8dbc; -fx-border-color: #367fa9;" text="دفع" textFill="#f8f8f8" />
    </children>
 </AnchorPane>

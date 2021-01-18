@@ -5,10 +5,13 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="786.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pointofsale.CategoriesController">
+<AnchorPane id="AnchorPane" prefHeight="786.0" prefWidth="1080.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pointofsale.CategoriesController">
    <children>
       <TableView fx:id="ListofCat" layoutX="15.0" layoutY="139.0" prefHeight="641.0" prefWidth="1050.0">
          <columns>
@@ -23,5 +26,15 @@
       <TextField layoutX="191.0" layoutY="83.0" prefHeight="40.0" prefWidth="399.0" promptText="Name &amp; Type &amp; ..." />
       <Button layoutX="603.0" layoutY="82.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="80.0" style="-fx-background-color: #3c8dbc;" text="Search" textFill="WHITE" />
       <Button layoutX="858.0" layoutY="82.0" mnemonicParsing="false" onAction="#Addcategories" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #00a65a;" text="Add Categories" textFill="WHITE" />
+      <Text layoutX="32.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="الفئات">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="8.0" fitWidth="1050.0" layoutX="11.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icon/Capture10.PNG" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

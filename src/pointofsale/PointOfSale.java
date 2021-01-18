@@ -13,6 +13,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
@@ -21,15 +22,17 @@ import javafx.stage.Stage;
  * @author benchek
  */
 public class PointOfSale extends Application {
-    
+
     @Override
     public void start(Stage primaryStage) throws IOException {
-      Parent parentroot =FXMLLoader.load(getClass().getResource("Login.fxml"));
-      primaryStage.setTitle("Loign");
-      primaryStage.setResizable(false);
-      primaryStage.setIconified(false);
-      primaryStage.setScene(new Scene(parentroot));
-      primaryStage.show();
+        Parent parentroot = FXMLLoader.load(getClass().getResource("Login.fxml"));
+        primaryStage.setTitle("Loign");
+        primaryStage.setResizable(false);
+        primaryStage.setIconified(false);
+        primaryStage.getIcons().add(new Image("file:src/pointofsale/icon/male.png"));
+
+        primaryStage.setScene(new Scene(parentroot));
+        primaryStage.show();
     }
 
     /**
@@ -38,5 +41,5 @@ public class PointOfSale extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
+
 }
