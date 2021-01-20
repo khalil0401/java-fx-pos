@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -42,6 +43,8 @@ public class AddCategoriesController implements Initializable {
         if(!Name.getText().equals("")&!Code.getText().equals("")){
          try{
         dao.InsertCat(Code.getText(), Name.getText(), Image.getText());
+        Stage stage1 = (Stage) Name.getScene().getWindow();
+                stage1.close();
          }catch(Exception e){
              alert.setContentText("خطاء في المدخلات");
              alert.show();

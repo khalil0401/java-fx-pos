@@ -46,6 +46,8 @@ public class AddCustomerController implements Initializable {
         if(!Name.getText().equals("")){
          try{
         dao.InsertCustomer(Name.getText(),Phone.getText(),Email.getText());
+        Stage stage1 = (Stage) Name.getScene().getWindow();
+                stage1.close();
          }catch(Exception e){
              alert.setContentText("خطاء في المدخلات "+e);
              alert.show();

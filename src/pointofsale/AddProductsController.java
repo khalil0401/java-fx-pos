@@ -20,6 +20,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -73,6 +74,8 @@ public class AddProductsController implements Initializable {
         if(!Name.getText().equals("")&!Price.getText().equals("")&!Quantity.getText().equals("")&!Code.getText().equals("")&!Cost.getText().equals("")&!Alert_Quantity.getText().equals("")){
          try{
         dao.InsertProducts(Name.getText(), Float.parseFloat(Price.getText()), Integer.valueOf( Quantity.getText()), Code.getText(),1, Type.getSelectionModel().getSelectedItem(),Float.parseFloat( Cost.getText()), Integer.valueOf(Alert_Quantity.getText()), Image.getText(), Details.getText());
+        Stage stage1 = (Stage) Name.getScene().getWindow();
+                stage1.close();
          }catch(Exception e){
              alert.setContentText("خطاء في المدخلات");
              alert.show();

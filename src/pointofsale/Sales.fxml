@@ -8,17 +8,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="786.0" prefWidth="1080.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="pointofsale.SalesController">
+<AnchorPane id="AnchorPane" prefHeight="786.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pointofsale.SalesController">
    <children>
-      <TableView layoutX="15.0" layoutY="131.0" prefHeight="641.0" prefWidth="1050.0">
+      <TableView fx:id="ListSales" layoutX="15.0" layoutY="131.0" prefHeight="641.0" prefWidth="1050.0">
          <columns>
-            <TableColumn prefWidth="75.0" text="Date" />
-            <TableColumn prefWidth="137.0" text="Customer" />
-            <TableColumn prefWidth="139.0" text="Total" />
-            <TableColumn prefWidth="189.0" text="Paid" />
-            <TableColumn prefWidth="230.0" text="Status" />
-            <TableColumn prefWidth="279.0" text="Actions" />
+            <TableColumn fx:id="Date" prefWidth="75.0" text="Date" />
+            <TableColumn fx:id="Customer" prefWidth="137.0" text="Customer" />
+            <TableColumn fx:id="Total" prefWidth="139.0" text="Total" />
+            <TableColumn fx:id="Paid" prefWidth="189.0" text="Paid" />
+            <TableColumn fx:id="Status" prefWidth="230.0" text="Status" />
+            <TableColumn fx:id="Actions" prefWidth="279.0" text="Actions" />
          </columns>
       </TableView>
       <ChoiceBox layoutX="95.0" layoutY="75.0" prefHeight="40.0" prefWidth="80.0" />

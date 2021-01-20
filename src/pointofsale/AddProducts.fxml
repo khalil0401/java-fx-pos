@@ -11,13 +11,13 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane id="AnchorPane" prefHeight="828.0" prefWidth="1024.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="pointofsale.AddProductsController">
+<AnchorPane id="AnchorPane" prefHeight="828.0" prefWidth="1024.0" style="-fx-background-color: #fff;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="pointofsale.AddProductsController">
    <children>
       <Pane layoutY="54.0" prefHeight="759.0" prefWidth="1024.0" AnchorPane.bottomAnchor="-27.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="54.0">
          <children>
             <ScrollPane prefHeight="776.0" prefWidth="1024.0">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="844.0" prefWidth="1016.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="844.0" prefWidth="1016.0" style="-fx-background-color: #fff;">
                      <children>
                         <Text layoutX="229.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
                         <TextField fx:id="Name" layoutX="229.0" layoutY="98.0" prefHeight="40.0" prefWidth="420.0" />

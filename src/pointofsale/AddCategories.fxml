@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane id="AnchorPane" prefHeight="786.0" prefWidth="1024.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="pointofsale.AddCategoriesController">
+<AnchorPane id="AnchorPane" prefHeight="786.0" prefWidth="1024.0" style="-fx-background-color: #fff;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="pointofsale.AddCategoriesController">
    <children>
       <Pane prefHeight="50.0" style="-fx-background-color: #00a65a;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>

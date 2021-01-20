@@ -8,17 +8,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="786.0" prefWidth="1080.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="pointofsale.UsersController">
+<AnchorPane id="AnchorPane" prefHeight="786.0" prefWidth="1080.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pointofsale.UsersController">
    <children>
-      <TableView layoutX="15.0" layoutY="122.0" prefHeight="641.0" prefWidth="1050.0">
+      <TableView fx:id="ListUsers" layoutX="15.0" layoutY="122.0" prefHeight="641.0" prefWidth="1050.0">
          <columns>
-            <TableColumn prefWidth="134.0" text="First Name" />
-            <TableColumn prefWidth="146.0" text="Last Name" />
-            <TableColumn prefWidth="150.0" text="Email" />
-            <TableColumn prefWidth="147.0" text="Group" />
-            <TableColumn prefWidth="216.0" text="Status" />
-            <TableColumn prefWidth="256.0" text="Actions" />
+            <TableColumn fx:id="FirstName" prefWidth="134.0" text="First Name" />
+            <TableColumn fx:id="LastName" prefWidth="146.0" text="Last Name" />
+            <TableColumn fx:id="Email" prefWidth="150.0" text="Email" />
+            <TableColumn fx:id="Group" prefWidth="147.0" text="Group" />
+            <TableColumn fx:id="Status" prefWidth="216.0" text="Status" />
+            <TableColumn fx:id="Actions" prefWidth="256.0" text="Actions" />
          </columns>
       </TableView>
       <ChoiceBox layoutX="95.0" layoutY="66.0" prefHeight="40.0" prefWidth="80.0" />
@@ -26,6 +25,6 @@
       <Button layoutX="984.0" layoutY="65.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="80.0" text="Excel" />
       <TextField layoutX="191.0" layoutY="66.0" prefHeight="40.0" prefWidth="399.0" promptText="Name &amp; Type &amp; ..." />
       <Button layoutX="603.0" layoutY="65.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="80.0" style="-fx-background-color: #3c8dbc;" text="Search" textFill="WHITE" />
-      <Button layoutX="858.0" layoutY="65.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #00a65a;" text="Add Users" textFill="WHITE" />
+      <Button layoutX="858.0" layoutY="65.0" mnemonicParsing="false" onAction="#AddUsersOnAction" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #00a65a;" text="Add Users" textFill="WHITE" />
    </children>
 </AnchorPane>
