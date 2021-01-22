@@ -139,7 +139,16 @@ public class JdbcDao {
     public ResultSet GetUsers() throws SQLException {
         Connection c = conctionfun();
         PreparedStatement preparedStatement = c.prepareStatement("SELECT * from tec_users");
-        ResultSet res =preparedStatement.executeQuery();
+        ResultSet res = preparedStatement.executeQuery();
         return res;
     }
+
+    public ResultSet GetRaportProduct() throws SQLException {
+        Connection c = conctionfun();
+        PreparedStatement preparedStatement = c.prepareStatement("SELECT COUNT(id),product_name,product_code,SUM(cost*quantity),SUM(unit_price*quantity),SUM(unit_price*quantity)-SUM(cost*quantity),product_id from tec_sale_items GROUP BY product_id");
+        ResultSet res = preparedStatement.executeQuery();
+    
+        return res;
+    }
+
 }

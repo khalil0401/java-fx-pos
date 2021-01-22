@@ -25,6 +25,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListCell;
@@ -121,7 +122,7 @@ public class POSController implements Initializable {
             QuantityProPayment.setCellFactory(TextFieldTableCell.forTableColumn());
             tableprod.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
                 // lisProPaymentt.add(newValue);
-                System.err.println(newValue.getName());
+               // System.err.println(newValue.getName());
                 listpayment.getItems().add(observable.getValue());
                 float total = 0;
                 for (int i = 0; i < listpayment.getItems().size(); i++) {
@@ -136,6 +137,7 @@ public class POSController implements Initializable {
                 customerLIst.getItems().add(resultSet1.getString("name"));
                 HashMapCustomer.put(resultSet1.getString("name"), resultSet1.getInt("id"));
             }
+            customerLIst.getSelectionModel().select(0);
 
         } catch (SQLException ex) {
             Logger.getLogger(POSController.class.getName()).log(Level.SEVERE, null, ex);
@@ -172,7 +174,13 @@ public class POSController implements Initializable {
     }
     @FXML
     private void PaymentAction(ActionEvent event) {
+         Alert alert = new Alert(Alert.AlertType.INFORMATION);
        try{    
+           if(listpayment.getItems().isEmpty()){
+                  alert.setContentText("يرجى اختيار عناصر");
+                  alert.show();
+
+           }else{
         FXMLLoader fXLoader=new FXMLLoader(getClass().getResource("PaymentPopup.fxml"));
                 Parent root= fXLoader.load();
                 Stage stage = new Stage(); 
@@ -184,9 +192,11 @@ public class POSController implements Initializable {
                 PaymentPopupController controller=fXLoader.getController();
                 controller.PassingData(paidob);
                 stage.show();
+                 }
         }catch(Exception e){
             System.err.println(e);
         }
+      
     }
 
     @FXML
@@ -199,6 +209,9 @@ public class POSController implements Initializable {
 
     @FXML
     private void CancelAction(ActionEvent event) {
+        listpayment.getItems().clear();
+        listpayment.refresh();
+        totalpayment.setText("00.00");
     }
 
     @FXML

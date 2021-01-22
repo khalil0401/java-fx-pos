@@ -24,6 +24,7 @@ public class OneSale {
     private SimpleStringProperty Status;
     private HBox Action;
     private Button Action1;
+    private SimpleStringProperty BalanceSale;
     public OneSale(String ID, String NameCustomer, String Date, String Total, String Paid, String Status ) {
         this.ID = new SimpleStringProperty(ID);
         this.NameCustomer = new SimpleStringProperty(NameCustomer);
@@ -31,12 +32,17 @@ public class OneSale {
         this.Total = new SimpleStringProperty(Total);
         this.Paid = new SimpleStringProperty(Paid);
         this.Status = new SimpleStringProperty(Status);
+        this.BalanceSale=new SimpleStringProperty((Float.valueOf(Paid)-Float.valueOf(Total))+"");
         Button Edit =new Button("Edit"); Button Delete =new Button("Delete");
         this.Action=new HBox(Edit,Delete);
         Edit.setOnAction(this::handelButtonActionEdit);
          Delete.setOnAction(this::handelButtonActionDelete);
     }
 
+    public String getBalanceSale() {
+        return BalanceSale.get();
+    }
+    
     public Button getAction1() {
         return Action1;
     }
